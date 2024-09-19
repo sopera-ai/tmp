@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const rightColumn = document.getElementById('right-column');
     const nextButton = document.getElementById('next-btn');
     const downloadButton = document.getElementById('download-btn');
+    const annotationCount = document.getElementById('annotation-count');
+
 
     let data = [];
     let currentQuestionIndex = 0;
@@ -15,91 +17,122 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             type: 'dropdown',
-            question: '2.机位（摄像机状态）:',
+            question: '2.Vibe:',
             options: [
-                { value: 'Option1', text: 'Option 1' },
+                { value: 'Documentary', text: 'Documentary' },
                 { value: 'Option2', text: 'Option 2' },
                 { value: 'Option3', text: 'Option 3' }
             ]
         },
         {
             type: 'dropdown',
-            question: '3.拍摄对象状态:',
+            question: '3.Theme:',
             options: [
-                { value: 'Option1', text: 'Option 1' },
+                { value: 'Tranquil', text: 'Tranquil' },
                 { value: 'Option2', text: 'Option 2' },
                 { value: 'Option3', text: 'Option 3' }
             ]
         },
         {
-            type: 'tags',
-            question: '4.景别:',
+            type: 'dropdown',
+            question: '4.机位（摄像机状态）:',
             options: [
-                { value: 'Tag1', text: 'Tag 1' },
-                { value: 'Tag2', text: 'Tag 2' },
-                { value: 'Tag3', text: 'Tag 3' },
-                { value: 'Tag4', text: 'Tag 4' },
-                { value: 'Tag5', text: 'Tag 5' }
-            ]
-        },
-        {
-            type: 'tags',
-            question: '5.视角:',
-            options: [
-                { value: 'Tag1', text: 'Tag 1' },
-                { value: 'Tag2', text: 'Tag 2' },
-                { value: 'Tag3', text: 'Tag 3' },
-                { value: 'Tag4', text: 'Tag 4' },
-                { value: 'Tag5', text: 'Tag 5' }
-            ]
-        },
-        {
-            type: 'tags',
-            question: '6.运镜:',
-            options: [
-                { value: 'Tag1', text: 'Tag 1' },
-                { value: 'Tag2', text: 'Tag 2' },
-                { value: 'Tag3', text: 'Tag 3' },
-                { value: 'Tag4', text: 'Tag 4' },
-                { value: 'Tag5', text: 'Tag 5' }
-            ]
-        },
-        {
-            type: 'tags',
-            question: '7.场景:',
-            options: [
-                { value: 'Tag1', text: 'Tag 1' },
-                { value: 'Tag2', text: 'Tag 2' },
-                { value: 'Tag3', text: 'Tag 3' },
-                { value: 'Tag4', text: 'Tag 4' },
-                { value: 'Tag5', text: 'Tag 5' }
-            ]
-        },
-        {
-            type: 'tags',
-            question: '8.情节:',
-            options: [
-                { value: 'Tag1', text: 'Tag 1' },
-                { value: 'Tag2', text: 'Tag 2' },
-                { value: 'Tag3', text: 'Tag 3' },
-                { value: 'Tag4', text: 'Tag 4' },
-                { value: 'Tag5', text: 'Tag 5' }
-            ]
-        },
-        {
-            type: 'tags',
-            question: '9.角色:',
-            options: [
-                { value: 'Tag1', text: 'Tag 1' },
-                { value: 'Tag2', text: 'Tag 2' },
-                { value: 'Tag3', text: 'Tag 3' },
-                { value: 'Tag4', text: 'Tag 4' },
-                { value: 'Tag5', text: 'Tag 5' }
+                { value: '固定机位', text: '固定机位' },
+                { value: '移动机位', text: '移动机位' }
             ]
         },
         {
             type: 'text',
-            question: '3.Enter text:'
+            question: '5.场景:'
+            
+        },
+        {
+            type: 'dropdown',
+            question: '6.拍摄对象状态:',
+            options: [
+                { value: '运动状态', text: '运动状态' },
+                { value: '固定状态', text: '固定状态' }
+            ]
+        },
+        {
+            type: 'text',
+            question: '7.情节:'   
+        },
+        {
+            type: 'dropdown',
+            question: '8.景别:',
+            options: [
+                { value: '远景', text: '远景' },
+                { value: '全景', text: '全景' },
+                { value: '中景', text: '中景' },
+                { value: '近景', text: '近景' },
+                { value: '特写', text: '特写' }
+                
+            ]
+        },
+        {
+            type: 'text',
+            question: '9.角色:'
+        },
+        {
+            type: 'dropdown',
+            question: '10.视角:',
+            options: [
+                { value: '俯拍', text: '俯拍' },
+                { value: '仰拍', text: '仰拍' },
+                { value: '平视', text: '平视' },
+                { value: '混合', text: '混合' }
+            ]
+        },
+        {
+            type: 'text',
+            question: '11.动作:'
+        },
+        {
+            type: 'dropdown',
+            question: '12.运镜:',
+            options: [
+                { value: '推', text: '推' },
+                { value: '拉', text: '拉' },
+                { value: '摇', text: '摇' },
+                { value: '移', text: '移' },
+                { value: '跟', text: '跟' },
+                { value: '甩', text: '甩' },
+                { value: '混合', text: '混合' }
+                
+            ]
+        },
+        {
+            type: 'text',
+            question: '13.道具:'
+        },
+        {
+            type: 'text',
+            question: '14.灯光:'
+        },
+        {
+            type: 'text',
+            question: '15.表情:'
+        },
+        {
+            type: 'text',
+            question: '16.色彩:'
+        },
+        {
+            type: 'text',
+            question: '17.视效:'
+        },
+        {
+            type: 'text',
+            question: '18.声音:'
+        },
+        {
+            type: 'text',
+            question: '19.画面:'
+        },
+        {
+            type: 'text',
+            question: '20.台词:'
         }
     ];
 
@@ -123,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
             questionDiv.appendChild(select);
         } else if (question.type === 'tags') {
             const showTagsIcon = document.createElement('span');
-            showTagsIcon.textContent = '🡇';  // Dropdown icon
+            showTagsIcon.textContent = '>';  // Dropdown icon
             showTagsIcon.className = 'show-tags-icon';
             showTagsIcon.id = `show-tags-${index}`;
             questionDiv.appendChild(showTagsIcon);
@@ -219,8 +252,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle 'Next' button click
     nextButton.addEventListener('click', () => {
         const answers = getCurrentAnswers();
+        annotationCount.textContent = `Currently annotated: ${data.length+1} items`;
+        alert("save!")
         
-        if (Object.values(answers).every(value => value !== undefined && value !== '')) {
+        if (Object.values(answers).every(value => value !== undefined)) {//&& value !== ''
             data.push(answers);
 
             // Reset form for the next set of questions
