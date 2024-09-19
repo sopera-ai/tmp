@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadButton = document.getElementById('download-btn');
     const annotationCount = document.getElementById('annotation-count');
 
-
     let data = [];
     let currentQuestionIndex = 0;
     
