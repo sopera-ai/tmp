@@ -59,14 +59,14 @@ label {
 
 select, textarea {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 textarea {
-    height: 100px;
+    height: 30px;
 }
 
 .tag-options {
