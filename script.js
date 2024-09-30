@@ -16,20 +16,30 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             type: 'dropdown',
-            question: '2.Vibe:',
+            question: '2.氛围 (Vibe):',
             options: [
-                { value: 'Documentary', text: 'Documentary' },
-                { value: 'Option2', text: 'Option 2' },
-                { value: 'Option3', text: 'Option 3' }
+                { value: 'Documentary', text: '纪录片风格' },
+                { value: 'Dark and Gritty', text: '黑暗阴郁' },
+                { value: 'Warm and Wholesome', text: '温暖治愈' },
+                { value: 'Retro or Nostalgic', text: '复古怀旧' },
+                { value: 'Surreal or Dreamlike', text: '奇幻超现实' },
+                { value: 'Fast-Paced and Energetic', text: '快速动感' },
+                { value: 'Suspenseful or Thrilling', text: '悬疑惊悚' }
             ]
         },
         {
             type: 'dropdown',
-            question: '3.Theme:',
+            question: '3.主题 (Theme):',
             options: [
-                { value: 'Tranquil', text: 'Tranquil' },
-                { value: 'Option2', text: 'Option 2' },
-                { value: 'Option3', text: 'Option 3' }
+                { value: '爱情', text: '爱情' },
+                { value: '成长', text: '成长' },
+                { value: '权力与背叛', text: '权力与背叛' },
+                { value: '人性与道德', text: '人性与道德' },
+                { value: '动作', text: '动作' },
+                { value: '喜剧', text: '喜剧' },
+                { value: '合家欢', text: '合家欢' },
+                { value: '音乐', text: '音乐' },
+                { value: '自我发现', text: '自我发现' }
             ]
         },
         {
