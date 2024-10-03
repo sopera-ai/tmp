@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let data = [];
     let currentQuestionIndex = 0;
+    let currentID = '';  // 当前片段的ID
+    let currentIDSuffix = 0;  // ID后缀序号
     
     // JSON data for questions
     const questions = [
@@ -44,7 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             type: 'dropdown',
-            question: '4.机位（摄像机状态）:',
+            question: '4.是否是新的片段:',
+            options: [
+                { value: 'yes', text: '是' },
+                { value: 'no', text: '否' }
+            ]
+        },
+        {
+            type: 'dropdown',
+            question: '5.机位（摄像机状态）:',
             options: [
                 { value: '固定机位', text: '固定机位' },
                 { value: '移动机位', text: '移动机位' }
@@ -52,12 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             type: 'text',
-            question: '5.场景:'
+            question: '6.场景:'
             
         },
         {
             type: 'dropdown',
-            question: '6.拍摄对象状态:',
+            question: '7.拍摄对象状态:',
             options: [
                 { value: '运动状态', text: '运动状态' },
                 { value: '固定状态', text: '固定状态' }
@@ -65,11 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             type: 'text',
-            question: '7.情节:'   
+            question: '8.情节:'   
         },
         {
             type: 'dropdown',
-            question: '8.景别:',
+            question: '9.景别:',
             options: [
                 { value: '远景', text: '远景' },
                 { value: '全景', text: '全景' },
@@ -81,11 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             type: 'text',
-            question: '9.角色:'
+            question: '10.角色:'
         },
         {
             type: 'dropdown',
-            question: '10.视角:',
+            question: '11.视角:',
             options: [
                 { value: '俯拍', text: '俯拍' },
                 { value: '仰拍', text: '仰拍' },
@@ -95,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             type: 'dropdown',
-            question: '11.运镜:',
+            question: '12.运镜:',
             options: [
                 { value: '推', text: '推' },
                 { value: '拉', text: '拉' },
@@ -109,9 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             type: 'text',
-            question: '12.台词:'
+            question: '13.台词:'
         }
     ];
+    
+    function generateUUID() {
+        return crypto.randomUUID(); //uuid
+    }
 
     function renderQuestion(question, index, container) {
         const questionDiv = document.createElement('div');
@@ -192,6 +206,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 answers[question.question] = element.value;
             }
         });
+        
+        // 处理"是否是新的片段"的回答
+        const isNewSegment = answers['4.是否是新的片段:'];
+
+        if (isNewSegment === 'yes') {
+            // 如果是新的片段，生成新的 UUID 并将后缀设为 0
+            currentID = generateUUID();
+            currentIDSuffix = 0;
+        } else if (isNewSegment === 'no') {
+            // 如果不是新的片段，沿用之前的 UUID 并增加后缀
+            currentIDSuffix++;
+        }
+
+        // 将生成的ID添加到答案中
+        answers['片段ID'] = `${currentID}-${currentIDSuffix}`;
+        
         return answers;
     }
 
