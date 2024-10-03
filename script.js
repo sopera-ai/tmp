@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             type: 'dropdown',
-            question: '4.是否是新的片段:',
+            question: '4.是否是新的剧情片段:',
             options: [
                 { value: 'yes', text: '是' },
                 { value: 'no', text: '否' }
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         // 处理"是否是新的片段"的回答
-        const isNewSegment = answers['4.是否是新的片段:'];
+        const isNewSegment = answers['4.是否是新的剧情片段:'];
 
         if (isNewSegment === 'yes') {
             // 如果是新的片段，生成新的 UUID 并将后缀设为 0
