@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const questions = [
         {
             type: 'text',
-            question: '1.标题:'
+            question: '1.电影标题:'
         },
         {
             type: 'dropdown',
@@ -94,12 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            type: 'text',
-            question: '11.动作:'
-        },
-        {
             type: 'dropdown',
-            question: '12.运镜:',
+            question: '11.运镜:',
             options: [
                 { value: '推', text: '推' },
                 { value: '拉', text: '拉' },
@@ -113,35 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             type: 'text',
-            question: '13.道具:'
-        },
-        {
-            type: 'text',
-            question: '14.灯光:'
-        },
-        {
-            type: 'text',
-            question: '15.表情:'
-        },
-        {
-            type: 'text',
-            question: '16.色彩:'
-        },
-        {
-            type: 'text',
-            question: '17.视效:'
-        },
-        {
-            type: 'text',
-            question: '18.声音:'
-        },
-        {
-            type: 'text',
-            question: '19.画面:'
-        },
-        {
-            type: 'text',
-            question: '20.台词:'
+            question: '12.台词:'
         }
     ];
 
